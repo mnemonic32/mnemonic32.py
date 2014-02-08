@@ -1,7 +1,4 @@
 #!/usr/bin/env python
-
-
-#USING CODE FROM ELECTRUM - This is an experimental hack. Don't use this file.
 #
 # Electrum - lightweight Bitcoin client
 # Copyright (C) 2011 thomasv@gitorious
@@ -1666,7 +1663,7 @@ def mn_encode( message ):
     trantab = maketrans(intab,outtab)
 	
     out = []
-    for i in range(len(message)/6):
+    for i in range((len(message)/6)+1):
         word = message[6*i:6*i+6]
         x = int(word.translate(trantab), 32)
         w1 = (x%n)
